@@ -78,12 +78,26 @@ const reasons = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formState, setFormState] = useState({ status: 'idle', message: '' })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent('Enquiry from TechTinker Lab website')
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)
-    window.location.href = `mailto:hello@techtinker-lab.com?subject=${subject}&body=${body}`
+    setFormState({ status: 'loading', message: '' })
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+
+    const data = await res.json()
+
+    if (res.ok) {
+      setFormState({ status: 'success', message: 'Your message has been sent! We\'ll be in touch soon.' })
+      setFormData({ name: '', email: '', message: '' })
+    } else {
+      setFormState({ status: 'error', message: data.error || 'Something went wrong. Please try again.' })
+    }
   }
 
   return (
@@ -320,11 +334,22 @@ export default function Home() {
                   className="w-full border border-brand-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 bg-white resize-none"
                 />
               </div>
+              {formState.status === 'success' && (
+                <div className="rounded-lg bg-green-50 border border-green-200 px-4 py-3 text-sm text-green-700">
+                  {formState.message}
+                </div>
+              )}
+              {formState.status === 'error' && (
+                <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                  {formState.message}
+                </div>
+              )}
               <button
                 type="submit"
-                className="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-lg transition-colors shadow-sm"
+                disabled={formState.status === 'loading'}
+                className="w-full bg-brand-600 hover:bg-brand-700 disabled:opacity-60 text-white font-semibold py-3 rounded-lg transition-colors shadow-sm"
               >
-                Send Message
+                {formState.status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
