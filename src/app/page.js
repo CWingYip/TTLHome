@@ -77,6 +77,14 @@ const reasons = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const subject = encodeURIComponent('Enquiry from TechTinker Lab website')
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)
+    window.location.href = `mailto:hello@techtinker-lab.com?subject=${subject}&body=${body}`
+  }
 
   return (
     <div className="min-h-screen bg-white text-gray-800">
@@ -266,7 +274,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <a
-                href="mailto:hello@techtinkerlab.co.uk"
+                href="mailto:hello@techtinker-lab.com"
                 className="flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-md"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -277,13 +285,16 @@ export default function Home() {
             </div>
 
             {/* Contact form */}
-            <form className="bg-brand-50 rounded-2xl p-8 text-left space-y-5 border border-brand-100">
+            <form onSubmit={handleSubmit} className="bg-brand-50 rounded-2xl p-8 text-left space-y-5 border border-brand-100">
               <h3 className="text-lg font-bold text-gray-900">Send a Message</h3>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                 <input
                   type="text"
+                  required
                   placeholder="Your name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full border border-brand-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 bg-white"
                 />
               </div>
@@ -291,7 +302,10 @@ export default function Home() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                 <input
                   type="email"
+                  required
                   placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full border border-brand-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 bg-white"
                 />
               </div>
@@ -299,7 +313,10 @@ export default function Home() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
                 <textarea
                   rows={4}
+                  required
                   placeholder="Tell us about your project..."
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full border border-brand-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 bg-white resize-none"
                 />
               </div>
