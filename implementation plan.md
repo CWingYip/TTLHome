@@ -1,5 +1,4 @@
 # TechTinker Lab Landing Page Implementation Plan
-
 ## Goal
 Create a simple, professional landing page for TechTinker Lab that introduces the business, explains its services, and encourages potential clients to get in touch for project-based work.
 
