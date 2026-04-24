@@ -39,7 +39,7 @@ const services = [
       </svg>
     ),
     title: 'Web & App Development',
-    items: ['Landing pages', 'Business websites', 'Web apps and simple digital products'],
+    items: ['AI-powered web apps', 'Chatbot widgets', 'Internal business tools'],
   },
   {
     icon: (
