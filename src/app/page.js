@@ -12,6 +12,7 @@ const services = [
     ),
     title: 'AI Solutions Setup',
     items: ['AI tool integration and workflow automation', 'Custom AI-powered features for existing products', 'Practical AI adoption strategy for businesses'],
+    demo: { label: 'Try RAG Chatbot Demo', href: '/RAG-Chatbot/' },
   },
   {
     icon: (
@@ -232,6 +233,18 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
+                  {s.demo && (
+                    <a
+                      href={s.demo.href}
+                      className="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {s.demo.label}
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
