@@ -38,6 +38,7 @@ jobs:
         run: npm run build
         env:
           EXPORT: '1'
+          NEXT_PUBLIC_BASE_PATH: '/TTLHome'
 
       - uses: actions/configure-pages@v4
 

@@ -3,7 +3,8 @@ const nextConfig = {
   output: process.env.EXPORT === '1' ? 'export' : 'standalone',
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './src/imageLoader.js',
   },
   ...(process.env.EXPORT === '1' && {
     basePath: '/TTLHome',
