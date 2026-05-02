@@ -5,6 +5,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  ...(process.env.EXPORT === '1' && {
+    basePath: '/TTLHome',
+    assetPrefix: '/TTLHome',
+  }),
 }
 
 module.exports = nextConfig
