@@ -6,10 +6,6 @@ const nextConfig = {
     loader: 'custom',
     loaderFile: './src/imageLoader.js',
   },
-  ...(process.env.EXPORT === '1' && {
-    basePath: '/TTLHome',
-    assetPrefix: '/TTLHome',
-  }),
 }
 
 module.exports = nextConfig
