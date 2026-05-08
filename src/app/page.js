@@ -12,7 +12,7 @@ const services = [
     ),
     title: 'AI Solutions Setup',
     items: ['AI tool integration and workflow automation', 'Custom AI-powered features for existing products', 'Practical AI adoption strategy for businesses'],
-    demo: { label: 'Try RAG Chatbot Demo', href: '/RAG-Chatbot/' },
+    demo: { label: 'Try RAG Chatbot Demo', href: 'http://dev.techtinker-lab.com/RAG-Chatbot/' },
   },
   {
     icon: (
@@ -32,6 +32,7 @@ const services = [
     ),
     title: 'GIS & Location-Based Solutions',
     items: ['Interactive maps and spatial data visualisation', 'Location-aware web and mobile apps', 'GIS data processing and analysis'],
+    demo: { label: 'View MapSaver Project', href: 'https://www.MapSaver.uk' },
   },
   {
     icon: (
