@@ -10,18 +10,9 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    title: 'AI Solutions Setup',
-    items: ['AI tool integration and workflow automation', 'Custom AI-powered features for existing products', 'Practical AI adoption strategy for businesses'],
+    title: 'AI Business Automation',
+    items: ['Workflow automation and process digitisation', 'AI advisor and chatbot integrations', 'Custom AI-powered business systems'],
     demo: { label: 'Try RAG Chatbot Demo', href: 'http://dev.techtinker-lab.com/RAG-Chatbot/' },
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-      </svg>
-    ),
-    title: 'Software Development',
-    items: ['Custom software solutions', 'Automation tools', 'Technical problem-solving'],
   },
   {
     icon: (
@@ -30,18 +21,9 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: 'GIS & Location-Based Solutions',
+    title: 'Geospatial Intelligence',
     items: ['Interactive maps and spatial data visualisation', 'Location-aware web and mobile apps', 'GIS data processing and analysis'],
     demo: { label: 'View MapSaver Project', href: 'https://www.MapSaver.uk' },
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-    title: 'Web & App Development',
-    items: ['AI-powered web apps', 'Chatbot widgets', 'Internal business tools'],
   },
   {
     icon: (
@@ -49,17 +31,21 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
       </svg>
     ),
-    title: 'STEM Curriculum Design',
-    items: ['Coding workshops', 'STEM learning materials', 'Project-based educational content'],
+    title: 'STEM & AI Education',
+    items: ['Coding workshops with AI tools', 'STEM learning materials for schools and clubs', 'Project-based educational content'],
   },
+]
+
+const comingSoon = [
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
       </svg>
     ),
-    title: 'Technical Consulting',
-    items: ['Early-stage project planning', 'Solution design', 'Development support'],
+    title: 'AI Invoice Assistant',
+    desc: 'Automatically extract, validate, and process invoices using AI. Eliminate manual data entry for accounts payable workflows.',
+    notifyHref: 'mailto:hello@techtinker-lab.com?subject=AI+Invoice+Interest',
   },
 ]
 
@@ -71,10 +57,10 @@ const steps = [
 ]
 
 const reasons = [
-  'Project-based and flexible — no retainers required',
-  'Strong focus on practical, working outcomes',
-  'Combines technical development with educational expertise',
-  'Suitable for both business and learning-focused projects',
+  'AI-first before headcount — we automate workflows before recommending new hires',
+  'Geospatial as a core capability, not an add-on — GIS + AI in one engagement',
+  'We explain what we build — education background means full documentation',
+  'Project-based and flexible — no retainers, no lock-in',
 ]
 
 export default function Home() {
@@ -168,11 +154,11 @@ export default function Home() {
             </div>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-              Build Practical{' '}
-              <span className="text-brand-600">Tech Solutions</span>
+              AI-Powered Systems{' '}
+              <span className="text-brand-600">for Your Business</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-10">
-              Software development, web solutions, AI integration, GIS applications, and STEM curriculum design — for project-based client work across the UK.
+              Workflow automation, AI advisors, and geospatial intelligence — built for the way your business actually works.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -200,6 +186,7 @@ export default function Home() {
               TechTinker Lab is a UK-based business specialising in software development, digital solutions, and STEM education projects.
               The company supports clients through project-based engagements in software engineering, websites, apps, AI integration, GIS systems, and curriculum development.
               Whether you are a small business needing a digital solution or an education provider building STEM content, TechTinker Lab delivers practical outcomes without the overhead of a large agency.
+              We lead with AI-first thinking: automating the repetitive before scaling the team.
             </p>
           </div>
         </section>
@@ -210,7 +197,7 @@ export default function Home() {
             <div className="text-center mb-14">
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Services</h2>
               <div className="w-16 h-1 bg-accent-500 rounded mx-auto mb-4" />
-              <p className="text-gray-500 text-lg">Practical solutions across AI, software, web, GIS, education, and consulting.</p>
+              <p className="text-gray-500 text-lg">Three areas of focused expertise — AI automation, geospatial intelligence, and education.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((s) => (
@@ -237,6 +224,8 @@ export default function Home() {
                   {s.demo && (
                     <a
                       href={s.demo.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors"
                     >
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -246,6 +235,34 @@ export default function Home() {
                       {s.demo.label}
                     </a>
                   )}
+                </div>
+              ))}
+            </div>
+
+            {/* Coming Soon cards */}
+            <div className="mt-6 flex justify-center">
+              {comingSoon.map((c) => (
+                <div
+                  key={c.title}
+                  className="bg-gray-50 rounded-2xl p-6 border-2 border-dashed border-gray-200 w-full sm:max-w-sm"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-14 h-14 rounded-xl bg-gray-100 flex items-center justify-center text-gray-400 opacity-40">
+                      {c.icon}
+                    </div>
+                    <span className="text-xs font-bold bg-accent-500 text-gray-900 px-3 py-1 rounded-full">Coming Soon</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-500 mb-2">{c.title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4">{c.desc}</p>
+                  <a
+                    href={c.notifyHref}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-500 hover:text-brand-700 transition-colors"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                    Get notified
+                  </a>
                 </div>
               ))}
             </div>
